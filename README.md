@@ -49,6 +49,8 @@ _The **master** branch is current development branch, build dependencies may cha
 - deepin-desktop-base | deepin-desktop-server | deepin-desktop-device
 
 ## Installation
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fre2zero%2Fdde-file-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fre2zero%2Fdde-file-manager?ref=badge_shield)
+
 
 ### Build from source code
 
@@ -105,3 +107,6 @@ We encourage you to report issues and contribute changes
 ## License
 
 dde-file-manager is licensed under [GPL-3.0-or-later](LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fre2zero%2Fdde-file-manager.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fre2zero%2Fdde-file-manager?ref=badge_large)
