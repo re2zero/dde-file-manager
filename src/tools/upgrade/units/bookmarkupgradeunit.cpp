@@ -50,6 +50,9 @@ QVariantMap BookmarkData::serialize()
 BookMarkUpgradeUnit::BookMarkUpgradeUnit()
     : UpgradeUnit()
 {
+    // define bookmark config path for compatibility
+    kConfigurationPath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/deepin/dde-file-manager.json";
+    kBackupDirPath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/deepin/dde-file-manager/old";
 }
 
 QString BookMarkUpgradeUnit::name()

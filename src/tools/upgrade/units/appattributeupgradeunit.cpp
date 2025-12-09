@@ -20,8 +20,6 @@ static constexpr char kConfigKeyIconSizeLevel[] { "IconSizeLevel" };
 static constexpr char kAppAttributeVersion[] { "v1.0" };
 static constexpr int kOldMaxIconSizeLevel { 4 };
 
-static QString kConfigurationPath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/deepin/dde-file-manager/dde-file-manager.json";
-static QString kBackupDirPath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/deepin/dde-file-manager/old";
 
 AppAttributeUpgradeUnit::AppAttributeUpgradeUnit()
     : UpgradeUnit()

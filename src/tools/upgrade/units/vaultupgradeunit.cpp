@@ -14,12 +14,15 @@ Q_DECLARE_LOGGING_CATEGORY(logToolUpgrade)
 using namespace dfm_upgrade;
 
 VaultUpgradeUnit::VaultUpgradeUnit()
-    : UpgradeUnit(),
-      cryfsConfigFilePathOld(kVaultBasePathOld + QDir::separator() + QString(kVaultEncrypyDirName) + QDir::separator() + QString(kCryfsConfigFileName)),
-      cryfsConfigFilePathNew(kVaultBasePath + QDir::separator() + QString(kVaultEncrypyDirName) + QDir::separator() + QString(kCryfsConfigFileName)),
-      decryptDirPathOld(kVaultBasePathOld + QDir::separator() + QString(kVaultDecryptDirName)),
-      decryptDirPathNew(kVaultBasePath + QDir::separator() + QString(kVaultDecryptDirName))
+    : UpgradeUnit()
 {
+    kVaultBasePath = QDir::homePath() + QString("/.config/Vault");
+    kVaultBasePathOld = QDir::homePath() + QString("/.local/share/applications");
+
+    cryfsConfigFilePathOld = kVaultBasePathOld + QDir::separator() + QString(kVaultEncrypyDirName) + QDir::separator() + QString(kCryfsConfigFileName);
+    cryfsConfigFilePathNew = kVaultBasePath + QDir::separator() + QString(kVaultEncrypyDirName) + QDir::separator() + QString(kCryfsConfigFileName);
+    decryptDirPathOld = kVaultBasePathOld + QDir::separator() + QString(kVaultDecryptDirName);
+    decryptDirPathNew = kVaultBasePath + QDir::separator() + QString(kVaultDecryptDirName);
 }
 
 QString VaultUpgradeUnit::name()

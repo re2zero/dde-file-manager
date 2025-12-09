@@ -4,11 +4,14 @@
 
 #include "upgradeunit.h"
 
+#include <QStandardPaths>
+
 using namespace dfm_upgrade;
 
 UpgradeUnit::UpgradeUnit()
 {
-
+    kConfigurationPath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/deepin/dde-file-manager/dde-file-manager.json";
+    kBackupDirPath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/deepin/dde-file-manager/old";
 }
 
 UpgradeUnit::~UpgradeUnit()
