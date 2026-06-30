@@ -1,0 +1,98 @@
+name: "文件管理器视图切换自测"
+app: "dde-file-manager"
+module: "视图"
+description: "视图模式切换的快速自测"
+tags: ["view", "smoke"]
+
+setup:
+  - action: session_start
+    command: "dde-file-manager"
+
+teardown:
+  - action: session_stop
+
+specs:
+  - id: view_icon_mode
+    name: "切换到图标视图"
+    tags: ["view", "smoke"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+1"
+      - action: wait
+        wait: 0.5
+
+  - id: view_list_mode
+    name: "切换到列表视图"
+    tags: ["view", "smoke"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+2"
+      - action: wait
+        wait: 0.5
+
+  - id: view_detail_mode
+    name: "切换到详情视图"
+    tags: ["view"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+3"
+      - action: wait
+        wait: 0.5
+
+  - id: view_toggle_hidden
+    name: "显示/隐藏隐藏文件"
+    tags: ["view"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+H"
+      - action: wait
+        wait: 0.3
+      - action: keyboard_hot_key
+        keys: "Ctrl+H"
+      - action: wait
+        wait: 0.3
+
+  - id: view_zoom_in
+    name: "放大图标"
+    tags: ["view"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl++"
+      - action: wait
+        wait: 0.3
+
+  - id: view_zoom_out
+    name: "缩小图标"
+    tags: ["view"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+-"
+      - action: wait
+        wait: 0.3
+
+  - id: view_sort_by_name
+    name: "按名称排序"
+    tags: ["view", "sort"]
+    steps:
+      - action: mouse_click
+        selector: {name: "名称"}
+      - action: wait
+        wait: 0.3
+
+  - id: view_sort_by_size
+    name: "按大小排序"
+    tags: ["view", "sort"]
+    steps:
+      - action: mouse_click
+        selector: {name: "大小"}
+      - action: wait
+        wait: 0.3
+
+  - id: view_sort_by_time
+    name: "按修改时间排序"
+    tags: ["view", "sort"]
+    steps:
+      - action: mouse_click
+        selector: {name: "修改时间"}
+      - action: wait
+        wait: 0.3

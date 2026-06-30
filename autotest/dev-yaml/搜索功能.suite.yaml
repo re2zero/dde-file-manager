@@ -1,0 +1,78 @@
+name: "文件管理器搜索功能自测"
+app: "dde-file-manager"
+module: "搜索"
+description: "搜索功能的快速自测"
+tags: ["search", "smoke"]
+
+setup:
+  - action: session_start
+    command: "dde-file-manager"
+
+teardown:
+  - action: session_stop
+
+specs:
+  - id: search_open
+    name: "打开搜索框"
+    tags: ["search", "smoke"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+F"
+      - action: wait
+        wait: 0.5
+
+  - id: search_by_name
+    name: "按文件名搜索"
+    tags: ["search"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+F"
+      - action: wait
+        wait: 0.3
+      - action: keyboard_type
+        text: "test"
+      - action: keyboard_press
+        keys: "Return"
+      - action: wait
+        wait: 1.0
+
+  - id: search_clear
+    name: "清除搜索"
+    tags: ["search"]
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+F"
+      - action: wait
+        wait: 0.3
+      - action: keyboard_type
+        text: "test"
+      - action: keyboard_press
+        keys: "Return"
+      - action: wait
+        wait: 0.5
+      - action: keyboard_hot_key
+        keys: "Ctrl+A"
+      - action: keyboard_press
+        keys: "BackSpace"
+      - action: wait
+        wait: 0.3
+
+  - id: search_advanced
+    name: "高级搜索"
+    tags: ["search"]
+    skip: "需要UI交互选择高级搜索选项"
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+F"
+      - action: wait
+        wait: 0.5
+
+  - id: search_by_content
+    name: "按文件内容搜索"
+    tags: ["search"]
+    skip: "需要UI交互设置内容搜索选项"
+    steps:
+      - action: keyboard_hot_key
+        keys: "Ctrl+F"
+      - action: wait
+        wait: 0.5
