@@ -1,0 +1,231 @@
+name: 桌面整理功能自测
+app: dde-file-manager
+module: 桌面整理
+description: 基于xlsx原始用例的桌面整理模块自动化测试套件，共20个可执行spec
+tags:
+- 功能测试
+- smoke
+setup:
+- action: session_start
+  command: dde-file-manager
+teardown:
+- action: session_stop
+specs:
+- id: 桌面整理_1998555_1
+  name: 开启桌面整理后设置任务栏在不同位置
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    description: 桌面右键菜单，点击“开启桌面整理”
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1969639_2
+  name: 【桌面】将谷歌或者edge、深度自研浏览器中的视频资源拖动至系统桌面
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1964085_3
+  name: 【桌面整理】桌面整理后编辑集合中的文件
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1846659_4
+  name: 桌面右键菜单点击跳转控制中心设置壁纸
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    description: 桌面右键菜单，点击“设置壁纸”
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1816793_5
+  name: 桌面整理-埋点数据上报（待补充桌面整理埋点编号）
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1816785_6
+  name: 桌面右键菜单关闭桌面整理
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: mouse_right_click
+    description: 再次点击查看桌面右键菜单
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1816781_7
+  name: 桌面右键菜单开启桌面整理
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    description: 桌面右键菜单，点击“开启桌面整理”
+  - action: wait
+    wait: 0.5
+  - action: mouse_right_click
+    description: 再次点击查看桌面右键菜单
+  - action: wait
+    wait: 0.5
+  - action: mouse_click
+    description: 在整理桌面菜单点击【一键整理桌面】
+- id: 桌面整理_1816767_8
+  name: 拖动改变集合窗口大小
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810241_9
+  name: 【1071桌面整理】单次整理，拖拽桌面文件到符合规则集合内
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810223_10
+  name: 【1071桌面整理】视图选项，关闭桌面整理
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: mouse_right_click
+    description: 桌面空白处右键菜单点击【整理桌面】
+- id: 桌面整理_1810199_11
+  name: 【1071桌面整理】单次整理，集合空白处-新建文档
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    description: '"文档"集合内空白处，右键菜单，点击"新建文档"，新建"办公文档"'
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810103_12
+  name: 【1071桌面整理】集合内文件操作-设为壁纸
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    description: 集合内图片，选中后右键菜单，点击"设为壁纸"
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810063_13
+  name: 【桌面整理】视图选项-自动排列图标(已开启桌面整理)
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810047_14
+  name: 【1071桌面整理】整理桌面
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: mouse_right_click
+    description: 点击右键菜单选项【整理桌面】
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810041_15
+  name: 【1071桌面整理】集合悬浮在上一层
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810039_16
+  name: 【桌面整理】自由拖动集合
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810035_17
+  name: 【1071桌面整理】集合尺寸设置，从小尺寸调节到大尺寸
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810033_18
+  name: 【1071桌面整理】集合尺寸设置，从大尺寸调节到小尺寸
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810031_19
+  name: 【桌面整理】集合尺寸调节，边框拉伸
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 桌面整理_1810029_20
+  name: 【1071桌面整理】集合尺寸调节，边角拉伸
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5

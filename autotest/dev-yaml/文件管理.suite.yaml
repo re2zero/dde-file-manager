@@ -1,0 +1,227 @@
+name: 文件管理功能自测
+app: dde-file-manager
+module: 文件管理
+description: 基于xlsx原始用例的文件管理模块自动化测试套件，共20个可执行spec
+tags:
+- 功能测试
+- smoke
+setup:
+- action: session_start
+  command: dde-file-manager
+teardown:
+- action: session_stop
+specs:
+- id: 文件管理_1816511_1
+  name: 组策略配置自动排序-右键菜单关闭自动排列时，检查组策略配置
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1816509_2
+  name: 组策略配置自动排序-右键菜单开启自动排列时，检查组策略配置
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1816507_3
+  name: 组策略配置自动排序-修改组策略为关闭时，检查桌面图标及右键菜单
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1816505_4
+  name: 组策略配置自动排序-修改组策略为开启时，检查桌面图标及右键菜单
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1816503_5
+  name: 组策略配置自动排序-主线默认为关闭
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808467_6
+  name: 桌面-文件名优化-不同字体下检查文件/文件夹名称显示_
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808465_7
+  name: 桌面-文件名优化-4K屏下不同分辨率检查文件/文件夹名称显示
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808461_8
+  name: '[131] 添加到桌面-复制ftp内文件/文件夹到桌面'
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_click
+    description: 打开文件管理器-点击搜索输入ftp://IP地址-复制文件/文件夹-粘贴到桌面
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808457_9
+  name: '[127]添加到桌面-拖拽sftp内文件/文件夹到桌面'
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_click
+    description: 打开文件管理器-点击搜索输入sftp://IP地址-拖拽文件/文件夹到桌面
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808451_10
+  name: 快捷键-切换选中文件/文件夹顺序
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_click
+    description: 进入桌面选中第一个图标-点击键盘right
+  - action: wait
+    wait: 0.5
+  - action: mouse_click
+    description: 点击键盘left
+  - action: wait
+    wait: 0.5
+  - action: mouse_click
+    description: 点击键盘down
+- id: 文件管理_1808443_11
+  name: '[086]快捷键-剪切置灰状态按esc重新呈选中状态'
+  tags:
+  - 功能测试
+  steps:
+  - action: keyboard_hot_key
+    keys: Ctrl+X
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808437_12
+  name: 快捷键-选中文件/文件夹按ctrl+i键调出属性弹窗
+  tags:
+  - 功能测试
+  steps:
+  - action: keyboard_hot_key
+    keys: Ctrl+I
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808429_13
+  name: 快捷键-敲击键盘快速定位选中文件/文件夹
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808425_14
+  name: '[056]快捷键-按ctrl+h显示隐藏文件/文件夹'
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: keyboard_hot_key
+    keys: Ctrl+H
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808419_15
+  name: 选中文件-按shift/ctrl选中多个文件/文件夹
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_click
+    description: 进入桌面-按住ctrl/shift-点击多个文件/文件夹
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808415_16
+  name: 未勾选自动排列-扩展模式下减少屏幕
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808411_17
+  name: 未勾选自动排列-扩展模式下删除主屏上文件/文件夹
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808409_18
+  name: 未勾选自动排列-扩展模式下删除副屏上文件/文件夹
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808407_19
+  name: '[core]未勾选自动排列-扩展模式下添加文件/文件夹'
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
+- id: 文件管理_1808405_20
+  name: '[core]未勾选自动排列-扩展模式下不同屏幕之间拖拽文件/文件夹'
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+  - action: wait
+    wait: 0.5
