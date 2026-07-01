@@ -1,7 +1,7 @@
 name: 回收站功能自测
 app: dde-file-manager
 module: 回收站
-description: 基于xlsx原始用例的回收站模块自动化测试套件，共20个可执行spec
+description: 基于xlsx原始用例的回收站模块自动化测试套件
 tags:
 - 功能测试
 - smoke
@@ -11,239 +11,290 @@ setup:
 teardown:
 - action: session_stop
 specs:
-- id: 回收站_1812083_1
+- id: spec_1812083_1
   name: 长文件名功能  - 长文件名功能开启状态，删除文件后，回收站属性的数量和大小正确_
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-- id: 回收站_1812081_2
+- id: spec_1812081_2
   name: Bug200815转：长文件名开启，回收站还原原始目录已存在同名文件的
   tags:
   - 功能测试
   steps:
-  - action: wait
-    wait: 0.5
   - action: mouse_click
-    description: 点击替换
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_click
-    description: 点击共存
-  - action: wait
-    wait: 0.5
-- id: 回收站_1809267_3
+- id: spec_1809267_3
   name: '[t]打开-回收站内选中单个文件夹右键-打开'
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_click
-    description: 点击打开
-  - action: wait
-    wait: 0.5
-- id: 回收站_1809265_4
+- id: spec_1809265_4
   name: '[029~032]右键菜单-桌面回收站图标右键菜单检查'
   tags:
   - 功能测试
   steps:
-  - action: wait
-    wait: 0.5
   - action: mouse_right_click
-    description: 右键-点击打开
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_right_click
-    description: 右键-点击清空回收站
-  - action: wait
-    wait: 0.5
-- id: 回收站_1809263_5
+- id: spec_1809263_5
   name: '[024~028]右键菜单-左侧侧边栏回收站右键菜单检查'
   tags:
   - 功能测试
   steps:
   - action: mouse_right_click
-    description: 双击桌面回收站图标--在左侧侧边栏-回收站处右键
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_right_click
-    description: 右键-点击新窗口打开
-  - action: wait
-    wait: 0.5
-  - action: mouse_right_click
-    description: 右键-点击新标签中打开
-- id: 回收站_1808275_6
+- id: spec_1808275_6
   name: 回收站图标右键菜单
   tags:
   - 功能测试
   steps:
-  - action: mouse_double_click
-    description: 进入桌面-双击回收站图标
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-  - action: mouse_click
-    description: 点击打开
-  - action: wait
-    wait: 0.5
-- id: 回收站_1805939_7
+- id: spec_1805939_7
   name: 回收站，文件和文件夹右键属性页面没有标记信息
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-- id: 回收站_1805933_8
+- id: spec_1805933_8
   name: '[086][core]添加数据到回收站-从桌面拖拽文件/文件夹到dock栏回收站图标上'
   tags:
   - 功能测试
   steps:
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-  - action: wait
-    wait: 0.5
-- id: 回收站_1805931_9
+- id: spec_1805931_9
   name: '[124]添加数据到回收站-从smb目录下拖拽文件/文件夹到dock栏回收站图标上'
   tags:
   - 功能测试
   steps:
   - action: mouse_click
-    description: 从smb目录下选中单个/多个文件/文件夹-拖拽到dock栏回收站图标上-点击弹窗上的取消按钮/X按钮
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_click
-    description: 从smb目录下选中单个/多个文件/文件夹-拖拽到dock栏回收站图标上-点击弹窗上的删除按钮
-  - action: wait
-    wait: 0.5
-  - action: wait
-    wait: 0.5
-- id: 回收站_1805903_10
+- id: spec_1805903_10
   name: 添加数据到回收站-连续删除重名文件/文件夹
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-  - action: wait
-    wait: 0.5
-- id: 回收站_1805901_11
+- id: spec_1805901_11
   name: 添加数据到回收站-删除多层级目录到回收站
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-- id: 回收站_1805893_12
+- id: spec_1805893_12
   name: '[t][core]右键菜单-回收站内空白处右键菜单功能正常'
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-  - action: mouse_click
-    description: 点击全部还原
-  - action: wait
-    wait: 0.5
-  - action: mouse_click
-    description: 点击清空回收站
-- id: 回收站_1805887_13
+- id: spec_1805887_13
   name: '[083]右键菜单-回收站内选中多个文件夹呼出右键菜单正常'
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-- id: 回收站_1805885_14
+- id: spec_1805885_14
   name: '[082]右键菜单-回收站内选中多个文件呼出右键菜单正常'
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-- id: 回收站_1805883_15
+- id: spec_1805883_15
   name: '[081]右键菜单-回收站内同时选中有文件和文件夹呼出右键菜单正常'
   tags:
   - 功能测试
   steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-- id: 回收站_1805881_16
+- id: spec_1805881_16
   name: '[080]右键菜单-回收站内文件夹下部分右键菜单灰显不可点击'
   tags:
   - 功能测试
   steps:
   - action: mouse_right_click
-    description: 打开回收站-双击任一文件夹-空白处右键
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: wait
-    wait: 0.5
-  - action: wait
-    wait: 0.5
-  - action: wait
-    wait: 0.5
-- id: 回收站_1805879_17
+- id: spec_1805879_17
   name: '[078]全部还原-回收站无内容时不可操作'
   tags:
   - 功能测试
   steps:
   - action: mouse_right_click
-    description: 进入回收站目录-空白处右键-点击全部还原
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-- id: 回收站_1805875_18
+- id: spec_1805875_18
   name: 全部还原-原路径不存在时功能正常
   tags:
   - 功能测试
   steps:
-  - action: wait
-    wait: 0.5
-  - action: wait
-    wait: 0.5
   - action: mouse_right_click
-    description: 打开回收站-空白处右键-点击全部还原
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-- id: 回收站_1805859_19
+- id: spec_1805859_19
   name: 【回收站】清空回收站-回收站有内容时功能正常
   tags:
   - 功能测试
   steps:
   - action: mouse_right_click
-    description: 打开文管窗口-侧边栏回收站目录右键-点击清空回收站
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_right_click
-    description: 进入回收站目录-空白处右键-点击清空回收站
-  - action: wait
-    wait: 0.5
-  - action: mouse_click
-    description: 进入回收站目录-点击右上角清空按钮
-- id: 回收站_1805841_20
+- id: spec_1805841_20
   name: '[t]排序-回收站点击列表头切换排序_'
   tags:
   - 功能测试
   steps:
   - action: mouse_click
-    description: 点击列表头：名称--查看文件排序
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_click
-    description: 点击列表头：原始路径--查看文件排序
+- id: spec_1805833_21
+  name: '[t]还原-原路径下存在同名文件/文件夹时功能正常_'
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
   - action: wait
     wait: 0.5
-  - action: mouse_click
-    description: 点击列表头：删除时间--查看文件排序
+- id: spec_1805825_22
+  name: 还原-选中大量文件/文件夹功能正常
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
+  - action: wait
+    wait: 0.5
+- id: spec_1805823_23
+  name: 还原-选中大文件/文件夹功能正常
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
+  - action: wait
+    wait: 0.5
+- id: spec_1805819_24
+  name: 【回收站】还原-ctrl+Z还原回收站内文件/文件夹
+  tags:
+  - 功能测试
+  steps:
+  - action: keyboard_hot_key
+    keys: Ctrl+S
+  - action: wait
+    wait: 0.5
+- id: spec_1805809_25
+  name: '[074]右键菜单-回收站内选择多个文件/文件夹右键菜单功能正常'
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
+  - action: wait
+    wait: 0.5
+- id: spec_1805783_26
+  name: '[126]回收站内拖拽文件/文件夹到文件夹下'
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: spec_1805779_27
+  name: 多窗口操作回收站
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
+- id: spec_1805763_28
+  name: 回收站，切换为列表模式_
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
+  - action: wait
+    wait: 0.5
+- id: spec_1805761_29
+  name: 回收站，空白处右键清空回收站
+  tags:
+  - 功能测试
+  steps:
+  - action: mouse_right_click
+    x: 400
+    y: 300
+  - action: wait
+    wait: 0.5
+- id: spec_1805741_30
+  name: '[core]彻底删除，shift+delete删除nas外置盘内文件/文件夹，文件/文件夹不进回收站'
+  tags:
+  - 功能测试
+  steps:
+  - action: wait
+    wait: 0.5
