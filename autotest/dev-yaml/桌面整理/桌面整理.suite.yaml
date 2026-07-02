@@ -2,253 +2,88 @@ name: 桌面整理功能自测
 app: dde-file-manager
 module: 桌面整理
 status: draft
-description: 基于xlsx原始用例的桌面整理模块自动化测试套件
+description: 文管桌面整理功能自测套件
 tags:
-- 功能测试
-- smoke
+  - 功能测试
+  - desktop
+
 setup:
-- action: session_start
-  command: dde-file-manager
+  - action: session_start
+    command: dde-file-manager
+
 teardown:
-- action: session_stop
+  - action: session_stop
+
 specs:
-- id: spec_1998555_1
-  name: 开启桌面整理后设置任务栏在不同位置
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1969639_2
-  name: 【桌面】将谷歌或者edge、深度自研浏览器中的视频资源拖动至系统桌面
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1964085_3
-  name: 【桌面整理】桌面整理后编辑集合中的文件
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1846659_4
-  name: 桌面右键菜单点击跳转控制中心设置壁纸
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816793_5
-  name: 桌面整理-埋点数据上报（待补充桌面整理埋点编号）
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816785_6
-  name: 桌面右键菜单关闭桌面整理
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816781_7
-  name: 桌面右键菜单开启桌面整理
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816767_8
-  name: 拖动改变集合窗口大小
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810241_9
-  name: 【1071桌面整理】单次整理，拖拽桌面文件到符合规则集合内
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810223_10
-  name: 【1071桌面整理】视图选项，关闭桌面整理
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810199_11
-  name: 【1071桌面整理】单次整理，集合空白处-新建文档
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810103_12
-  name: 【1071桌面整理】集合内文件操作-设为壁纸
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810063_13
-  name: 【桌面整理】视图选项-自动排列图标(已开启桌面整理)
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810047_14
-  name: 【1071桌面整理】整理桌面
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810041_15
-  name: 【1071桌面整理】集合悬浮在上一层
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810039_16
-  name: 【桌面整理】自由拖动集合
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810035_17
-  name: 【1071桌面整理】集合尺寸设置，从小尺寸调节到大尺寸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810033_18
-  name: 【1071桌面整理】集合尺寸设置，从大尺寸调节到小尺寸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810031_19
-  name: 【桌面整理】集合尺寸调节，边框拉伸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810029_20
-  name: 【1071桌面整理】集合尺寸调节，边角拉伸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810027_21
-  name: 【桌面整理】集合尺寸调节，与其他集合相邻-上下拉伸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810025_22
-  name: 【1071桌面整理】集合尺寸调节，与其他集合相邻-左右拉伸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810023_23
-  name: 【1071桌面整理】集合尺寸调节，与其他集合相邻-边角拉伸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810021_24
-  name: 【1071桌面整理】集合尺寸调节，最小尺寸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810019_25
-  name: 【1071桌面整理】集合尺寸调节，最大尺寸
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810017_26
-  name: 【1071桌面整理】集合尺寸调节，集合间最小边距
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810015_27
-  name: 【1071桌面整理】集合尺寸调节，集合间不能重叠
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810013_28
-  name: 【桌面整理】拖拽集合，集合吸附
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810009_29
-  name: 【桌面整理】拖拽集合到集合，显示辅助框
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810005_30
-  name: 【1071桌面整理】拖拽集合到集合，插空位置预告，上方空间足(拖拽对象尺寸相比较小，中心点距上方左侧近)
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
+  # 桌面整理开关
+  - id: desktop_organize_enable
+    name: 开启桌面整理
+    tags: [desktop]
+    steps:
+      - action: mouse_right_click
+        x: 100
+        y: 100
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "开启桌面整理"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: desktop_organize_disable
+    name: 关闭桌面整理
+    tags: [desktop]
+    steps:
+      - action: mouse_right_click
+        x: 100
+        y: 100
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "关闭桌面整理"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  # 集合操作
+  - id: collection_create
+    name: 创建集合
+    tags: [desktop]
+    skip: "需要开启桌面整理"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  - id: collection_resize
+    name: 调整集合大小
+    tags: [desktop]
+    skip: "需要开启桌面整理并有集合"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  - id: collection_drag
+    name: 拖动集合
+    tags: [desktop]
+    skip: "需要开启桌面整理并有集合"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  # 整理操作
+  - id: organize_now
+    name: 立即整理
+    tags: [desktop]
+    skip: "需要开启桌面整理"
+    steps:
+      - action: mouse_right_click
+        x: 100
+        y: 100
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "整理桌面"}
+        do: click
+      - action: wait
+        wait: 0.5

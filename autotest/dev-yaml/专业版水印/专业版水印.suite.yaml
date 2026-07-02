@@ -2,241 +2,61 @@ name: 专业版水印功能自测
 app: dde-file-manager
 module: 专业版水印
 status: draft
-description: 基于xlsx原始用例的专业版水印模块自动化测试套件
+description: 文管专业版水印功能自测套件（需要特定授权环境）
 tags:
-- 功能测试
-- smoke
+  - 功能测试
+  - license
+
+env_check:
+  - type: process
+    name: dde-file-manager
+    expect: running
+
 setup:
-- action: session_start
-  command: dde-file-manager
+  - action: session_start
+    command: dde-file-manager
+
 teardown:
-- action: session_stop
+  - action: session_stop
+
 specs:
-- id: spec_1816469_1
-  name: 水印支持配置-自定义水印支持格式和大小检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816467_2
-  name: 水印支持配置-组策略关闭自定义水印
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816465_3
-  name: 水印支持配置-自定义水印与系统水印重叠时，在系统水印上方
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816463_4
-  name: 水印支持配置-组策略修改自定义水印参数
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816461_5
-  name: 水印支持配置-组策略添加自定义水印
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816459_6
-  name: 水印支持配置-组策略修改系统水印参数
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816441_7
-  name: 桌面水印优化-密安授权适配水印检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816439_8
-  name: 桌面水印优化-企业授权适配水印检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816437_9
-  name: 桌面水印优化-政务授权适配水印检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816431_10
-  name: 桌面水印优化-专业版激活水印检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816429_11
-  name: 桌面水印优化-试用期水印检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816427_12
-  name: 桌面水印优化-未授权水印检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816423_13
-  name: 密安授权-修改分辨率和所放比，检查图标展示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816421_14
-  name: 密安授权-使用密安授权后切换为其他授权
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816419_15
-  name: 密安授权-使用只有密安授权的激活码激活
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816417_16
-  name: 密安授权-使用企业授权后，切换为密安授权的激活码激活
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816415_17
-  name: 密安授权-使用政务授权后，切换为密安授权的激活码激活
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816413_18
-  name: 密安授权-桌面水印语言适配
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816411_19
-  name: 密安授权-计算机属性语言适配
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816409_20
-  name: 政务版-架构兼容_
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816405_21
-  name: 政务版-桌面授权版本水印-多语言适配_
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816403_22
-  name: 政务版-计算机属性-版本字段_
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816401_23
-  name: 企业版-计算机属性-版本字段
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816399_24
-  name: 企业版-桌面授权版本水印-多语言适配
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816391_25
-  name: 系统未激活-UOSlogo右下角显示“未授权”水印
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816389_26
-  name: 系统试用期-UOSlogo右下角显示“试用期”水印（保留原有实现）
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816387_27
-  name: 系统试用期过期-UOSlogo右下角显示“试用期过期”水印（保留原有实现）
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816385_28
-  name: 政务版-普通激活码激活后切换政务版激活码激活
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816383_29
-  name: 企业版-使用普通激活码激活后切换企业版激活码激活
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816381_30
-  name: 企业版-使用政务版激活后切换企业版激活码激活
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
+  # 水印检查（需要特定授权）
+  - id: watermark_trial
+    name: 试用期水印检查
+    tags: [license]
+    skip: "需要试用期授权状态"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  - id: watermark_authorized
+    name: 已授权水印检查
+    tags: [license]
+    skip: "需要已授权状态"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  - id: watermark_enterprise
+    name: 企业版水印检查
+    tags: [license]
+    skip: "需要企业版授权"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  - id: watermark_government
+    name: 政务版水印检查
+    tags: [license]
+    skip: "需要政务版授权"
+    steps:
+      - action: wait
+        wait: 0.5
+
+  - id: watermark_custom
+    name: 自定义水印检查
+    tags: [license]
+    skip: "需要组策略配置自定义水印"
+    steps:
+      - action: wait
+        wait: 0.5

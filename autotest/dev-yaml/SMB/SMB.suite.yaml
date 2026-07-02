@@ -2,303 +2,107 @@ name: SMB功能自测
 app: dde-file-manager
 module: SMB
 status: draft
-description: 基于xlsx原始用例的SMB模块自动化测试套件
+description: 文管SMB网络共享功能自测套件
 tags:
-- 功能测试
-- smoke
+  - 功能测试
+  - network
+  - smb
+
 setup:
-- action: session_start
-  command: dde-file-manager
+  - action: session_start
+    command: dde-file-manager
+
 teardown:
-- action: session_stop
+  - action: session_stop
+
 specs:
-- id: spec_1978593_1
-  name: '[core]连接服务器-连接到服务器窗口，选择“协议”增加dav/davs/nfs'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813751_2
-  name: 取消共享-取消共享文件到smb
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813695_3
-  name: smb共享密码中存在半角逗号，共享后进行挂载访问
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1813693_4
-  name: smb共享密码中存在逗号，共享后进行挂载访问
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1813691_5
-  name: 挂载smb后，点击顶部的面包屑
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813675_6
-  name: smb-入域后挂载同域的smb不需要账号密码
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_double_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813591_7
-  name: 网络邻居-存在大量共享计算机时网络邻居页面展示
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813579_8
-  name: 网络邻居-展示局域网内所有共享计算机
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813517_9
-  name: Bug186433转：桌面创建smb快捷方式，断网后桌面不会卡死
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813515_10
-  name: Bug184859转：挂载smb时关闭鉴权窗口，双击导航栏面包屑不会使文管崩溃
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_double_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813511_11
-  name: Bug186449转：挂载smb后断网，不会导致文管卡死
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813509_12
-  name: '[087][core]右键菜单-侧边栏smb目录右键-退出登录并卸载'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813507_13
-  name: '[067]右键菜单-侧边栏smb目录右键-属性'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813461_14
-  name: '[081]右键菜单-挂载smb目录下右键创建链接'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813455_15
-  name: 右键菜单-挂载smb目录下选中单个文件夹右键添加书签
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813453_16
-  name: 右键菜单-挂载smb目录下右键病毒查杀
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813443_17
-  name: 拖拽smb目录下文件/文件夹到压缩文件中
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813441_18
-  name: '[085][core]挂载smb目录下搜索'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813439_19
-  name: 挂载smb目录下操作大量文件
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813437_20
-  name: 挂载smb目录下操作大文件
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813435_21
-  name: smb挂载目录下快捷键操作
-  tags:
-  - 功能测试
-  steps:
-  - action: keyboard_hot_key
-    keys: Ctrl+S
-  - action: wait
-    wait: 0.5
-- id: spec_1813427_22
-  name: 不同系统互相操作-UOS上共享smb，其他系统访问并操作
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813393_23
-  name: smb-停掉smb服务
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1813387_24
-  name: 共享常驻 (不勾选)- 卸载所有smb目录，检查侧边栏
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813385_25
-  name: 连接到服务器，清除最近使用的服务器
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813353_26
-  name: smb引导打开-smb关闭状态，授权提示框操作
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813303_27
-  name: '[045]右键共享-选中多个文件夹不支持右键共享到smb'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813299_28
-  name: '[046]右键共享-回收站内文件夹不支持共享到smb'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813297_29
-  name: '[047]右键共享-文件夹右键共享到smb'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1813277_30
-  name: 共享-更改文件所有者为其他成员或属组成员不能共享文件夹
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
+  # 连接服务器
+  - id: smb_connect
+    name: 连接到服务器对话框
+    tags: [smb, network]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "连接到服务器"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  - id: smb_connect_smb
+    name: 连接SMB服务器
+    tags: [smb, network]
+    skip: "需要SMB服务器环境"
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "连接到服务器"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_type
+        text: smb://localhost/share
+      - action: wait
+        wait: 0.3
+      - action: keyboard_press
+        keys: Return
+      - action: wait
+        wait: 1.0
+
+  # 设置共享密码
+  - id: smb_set_password
+    name: 设置共享密码
+    tags: [smb, network]
+    skip: "需要SMB服务配置权限"
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "设置共享密码"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  # 共享操作
+  - id: smb_share_folder
+    name: 右键共享文件夹到SMB
+    tags: [smb, network]
+    skip: "需要SMB服务配置权限"
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "共享到SMB"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  # 网络邻居
+  - id: smb_network_neighbors
+    name: 查看网络邻居
+    tags: [smb, network]
+    skip: "需要网络环境"
+    steps:
+      - action: wait
+        wait: 0.5

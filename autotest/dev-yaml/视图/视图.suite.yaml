@@ -1,0 +1,124 @@
+name: 视图切换功能自测
+app: dde-file-manager
+module: 视图
+status: ready
+description: 文管视图切换功能自测套件
+tags:
+  - 功能测试
+  - smoke
+  - ui
+
+setup:
+  - action: session_start
+    command: dde-file-manager
+
+teardown:
+  - action: session_stop
+
+specs:
+  # 视图模式切换
+  - id: view_icon_mode
+    name: 视图切换-图标视图
+    tags: [ui, smoke]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "图标视图"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: view_list_mode
+    name: 视图切换-列表视图
+    tags: [ui, smoke]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "列表视图"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: view_tree_mode
+    name: 视图切换-树形视图
+    tags: [ui]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "树形视图"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  # 排序方式
+  - id: sort_by_name
+    name: 排序-按名称
+    tags: [ui]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "名称"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: sort_by_mtime
+    name: 排序-按修改时间
+    tags: [ui]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "修改时间"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: sort_by_size
+    name: 排序-按大小
+    tags: [ui]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "大小"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: sort_by_type
+    name: 排序-按类型
+    tags: [ui]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "类型"}
+        do: click
+      - action: wait
+        wait: 0.5

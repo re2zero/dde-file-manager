@@ -1,255 +1,169 @@
 name: 文件操作功能自测
 app: dde-file-manager
 module: 文件操作
-status: draft
-description: 基于xlsx原始用例的文件操作模块自动化测试套件
+status: ready
+description: 文管文件操作功能自测套件
 tags:
-- 功能测试
-- smoke
+  - 功能测试
+  - smoke
+  - file
+
 setup:
-- action: session_start
-  command: dde-file-manager
+  - action: session_start
+    command: dde-file-manager
+
 teardown:
-- action: session_stop
+  - action: session_stop
+
 specs:
-- id: spec_1977285_1
-  name: 主目录图标 - 右键操作-3
-  tags:
-  - 功能测试
-  steps:
-  - action: keyboard_hot_key
-    keys: Ctrl+S
-  - action: wait
-    wait: 0.5
-- id: spec_1977283_2
-  name: 主目录图标 - 右键操作-2
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1973773_3
-  name: '[006][core]右侧预览-图片类型信息栏基本信息-2'
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1955355_4
-  name: 应用图标重命名
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1863157_5
-  name: 视频预览
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1853733_6
-  name: 【文件操作】文件夹创建软链接
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816711_7
-  name: 排序方式-排序方式修改
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816105_8
-  name: 长文件名功能  - 添加快捷访问
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816029_9
-  name: 长文件名功能 - 桌面创建长文件名的文件
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816027_10
-  name: 埋点-打开上万文件的目录检查上传时间
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816023_11
-  name: 埋点-打开任意目录检查上传时间
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816021_12
-  name: 埋点-打开空目录检查上传时间
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1816013_13
-  name: 埋点，右键菜单项点击分布-挂载
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816007_14
-  name: 埋点，右键菜单项点击分布-在新窗口打开
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816003_15
-  name: 埋点，右键菜单项点击分布-打开
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816001_16
-  name: 长文件名功能 - 字符限制规则
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815999_17
-  name: 长文件名功能 - 卸载后，字符限制规则
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815997_18
-  name: 长文件名功能  - 文件夹，以新窗口打开
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1815995_19
-  name: 长文件名功能  - 文件夹，以新标签打开
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1815989_20
-  name: 长文件名功能  - 新建文件夹
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815987_21
-  name: 长文件名功能  - 新建文档
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815983_22
-  name: 长文件名功能  - 复制，粘贴
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815979_23
-  name: 长文件名功能  - 粘贴字符数超出新规则
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815975_24
-  name: 长文件名功能  - 剪贴板
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815963_25
-  name: 长文件名功能  - 强制删除
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815959_26
-  name: 长文件名功能  - 删除、撤销
-  tags:
-  - 功能测试
-  steps:
-  - action: keyboard_hot_key
-    keys: Ctrl+S
-  - action: wait
-    wait: 0.5
-- id: spec_1815949_27
-  name: 长文件名功能  - 复制，剪切，拖拽到/tmp目录
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815945_28
-  name: 长文件名功能  - 发送到桌面
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_double_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1815929_29
-  name: 长文件名功能(关闭) - 新建文件夹
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1815923_30
-  name: 复制含有特殊字符的文件夹，选择替换方式
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
+  # 快捷键操作
+  - id: file_copy
+    name: 快捷键-复制文件
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+C
+      - action: wait
+        wait: 0.3
+
+  - id: file_cut
+    name: 快捷键-剪切文件
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+X
+      - action: wait
+        wait: 0.3
+
+  - id: file_paste
+    name: 快捷键-粘贴文件
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+V
+      - action: wait
+        wait: 0.3
+
+  - id: file_select_all
+    name: 快捷键-全选
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+A
+      - action: wait
+        wait: 0.3
+
+  - id: file_delete
+    name: 快捷键-删除到回收站
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_press
+        keys: Delete
+      - action: wait
+        wait: 0.3
+
+  - id: file_permanent_delete
+    name: 快捷键-永久删除
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Shift+Delete
+      - action: wait
+        wait: 0.3
+
+  - id: file_rename
+    name: 快捷键-重命名
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_press
+        keys: F2
+      - action: wait
+        wait: 0.3
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.2
+
+  - id: file_properties
+    name: 快捷键-查看属性
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+I
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  # 显示隐藏文件
+  - id: file_show_hidden
+    name: 快捷键-显示隐藏文件
+    tags: [file, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+H
+      - action: wait
+        wait: 0.3
+
+  # 右键菜单操作
+  - id: file_context_menu
+    name: 右键菜单-打开
+    tags: [file, menu]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+
+  - id: file_context_open_terminal
+    name: 右键菜单-在终端中打开
+    tags: [file, menu]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "在终端中打开"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: file_context_new_folder
+    name: 右键菜单-新建文件夹
+    tags: [file, menu]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "新建文件夹"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.2
+
+  # 发送到
+  - id: file_send_to_desktop
+    name: 右键菜单-发送到桌面
+    tags: [file, menu]
+    steps:
+      - action: mouse_right_click
+        x: 400
+        y: 300
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "发送到桌面"}
+        do: click
+      - action: wait
+        wait: 0.5

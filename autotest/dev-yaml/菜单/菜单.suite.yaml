@@ -1,268 +1,207 @@
 name: 菜单功能自测
 app: dde-file-manager
 module: 菜单
-status: draft
-description: 基于xlsx原始用例的菜单模块自动化测试套件
+status: ready
+description: 文管主菜单功能自测套件，使用真实AT-SPI选择器
 tags:
-- 功能测试
-- smoke
+  - 功能测试
+  - smoke
+  - menu
+
 setup:
-- action: session_start
-  command: dde-file-manager
+  - action: session_start
+    command: dde-file-manager
+
 teardown:
-- action: session_stop
+  - action: session_stop
+
 specs:
-- id: spec_1969847_1
-  name: 设置-侧边栏显示项目-网络-取消勾选显示后点击恢复默认
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810335_2
-  name: 【工作区视图插件显示隐藏】文管设置，设置界面多语言翻译检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810331_3
-  name: 【菜单】【工作区视图插件显示隐藏】组策略，计算机工作区隐藏“我的目录”
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810299_4
-  name: 不勾选【显示隐藏文件】-弹窗功能检查
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810297_5
-  name: 【菜单】不勾选【显示隐藏文件】-桌面/普通目录隐藏文件/文件夹
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810295_6
-  name: 不勾选【显示隐藏文件】-用户隔离
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810293_7
-  name: 不勾选【显示隐藏文件】-特殊目录
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810291_8
-  name: 不勾选【显示隐藏文件】-文件保存对话框/文件选择对话框
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810289_9
-  name: 不勾选【显示隐藏文件】-弹窗提示文案
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810287_10
-  name: 不勾选【显示隐藏文件】-在桌面以“.”开头新建/重命名文件-弹窗提示-点击右上角【X】
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810285_11
-  name: 【菜单】不勾选【显示隐藏文件】-在桌面/普通目录以“.”开头新建/重命名文件-弹窗提示-点击【取消】
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810283_12
-  name: 不勾选【显示隐藏文件】-在桌面以“.”开头新建/重命名文件-弹窗提示-英文文案
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810281_13
-  name: 不勾选【显示隐藏文件】-在桌面以“.”开头新建/重命名文件-弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810279_14
-  name: 不勾选【显示隐藏文件】和【显示文件扩展名】-在文管内重命名文件-删除文件名-自动恢复文件名，不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810275_15
-  name: 勾选【显示隐藏文件】-在sftp共享目录内“.”开头新建/重命名文件-不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810273_16
-  name: 勾选【显示隐藏文件】-在ftp共享目录内“.”开头新建/重命名文件-不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810271_17
-  name: 勾选【显示隐藏文件】-在smb共享目录内“.”开头新建/重命名文件-不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810267_18
-  name: 勾选【显示隐藏文件】-在文件保存对话框内以“.”开头新建/重命名文件-不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810265_19
-  name: 勾选【显示隐藏文件】-在文件选择对话框内以“.”开头新建/重命名文件-不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810261_20
-  name: 【菜单】勾选【显示隐藏文件】-在桌面/普通目录以“.”开头新建/重命名文件-不弹窗提示
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1809287_21
-  name: 【支持视图模式应用到所有目录】- 检查文管设置菜单，新增选项“所有目录恢复默认视图”
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1808659_22
-  name: 【新建标签页】文管深层目录页面，菜单-新建标签页
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1808655_23
-  name: 【新建标签页】文管"快捷访问"页面，菜单-新建标签页
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1808653_24
-  name: 【新建标签页】文管"计算机"页面，菜单-新建标签页
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1808651_25
-  name: 连接到服务器-输入完整的计算机名加路径连接设备
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1808649_26
-  name: 【工作区视图插件显示隐藏】文管设置，高级设置-对话框-开启普通删除提示
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1808647_27
-  name: 【工作区视图插件显示隐藏】文管设置，高级设置-对话框-使用文件管理器的文件选择对话框
-  tags:
-  - 功能测试
-  steps:
-  - action: keyboard_hot_key
-    keys: Ctrl+S
-  - action: wait
-    wait: 0.5
-- id: spec_1808637_28
-  name: 【工作区视图插件显示隐藏】文管设置，高级设置-搜索-全文搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1808631_29
-  name: 【工作区视图插件显示隐藏】文管设置，工作区视图-计算机视图显示项目-在磁盘图标上显示文件系统标签
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1808627_30
-  name: 【工作区视图插件显示隐藏】文管设置，工作区视图-计算机视图显示项目-计算机工作区隐藏回环分区
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
+  # 主菜单操作
+  - id: menu_new_window
+    name: 主菜单-新建窗口
+    tags: [menu, smoke]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "新建窗口"}
+        do: click
+      - action: wait
+        wait: 1.0
+
+  - id: menu_new_tab
+    name: 主菜单-新建标签页
+    tags: [menu, smoke]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "新建标签页"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: menu_connect_server
+    name: 主菜单-连接到服务器
+    tags: [menu]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "连接到服务器"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  - id: menu_settings
+    name: 主菜单-设置
+    tags: [menu]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "设置"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  # 主题切换
+  - id: menu_theme_light
+    name: 主菜单-主题-浅色
+    tags: [menu, theme]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "主题"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "浅色"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  - id: menu_theme_dark
+    name: 主菜单-主题-深色
+    tags: [menu, theme]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "主题"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "深色"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  # 帮助菜单
+  - id: menu_help
+    name: 主菜单-帮助
+    tags: [menu]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "帮助"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  - id: menu_about
+    name: 主菜单-关于
+    tags: [menu, smoke]
+    steps:
+      - action: element_action
+        selector: {role: "push button", name: "DTitlebarDWindowOptionButton"}
+        do: click
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "menu item", name: "关于"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  # 快捷键操作
+  - id: shortcut_new_window
+    name: 快捷键-Ctrl+N新建窗口
+    tags: [shortcut, smoke]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+N
+      - action: wait
+        wait: 0.5
+
+  - id: shortcut_new_tab
+    name: 快捷键-Ctrl+T新建标签页
+    tags: [shortcut, smoke]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+T
+      - action: wait
+        wait: 0.5
+
+  - id: shortcut_close_tab
+    name: 快捷键-Ctrl+W关闭标签页
+    tags: [shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+W
+      - action: wait
+        wait: 0.3
+
+  - id: shortcut_search
+    name: 快捷键-Ctrl+F搜索
+    tags: [shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.2

@@ -1,262 +1,151 @@
 name: 搜索功能自测
 app: dde-file-manager
 module: 搜索
-status: draft
-description: 基于xlsx原始用例的搜索模块自动化测试套件
+status: ready
+description: 文管搜索功能自测套件
 tags:
-- 功能测试
-- smoke
+  - 功能测试
+  - smoke
+  - search
+
 setup:
-- action: session_start
-  command: dde-file-manager
+  - action: session_start
+    command: dde-file-manager
+
 teardown:
-- action: session_stop
+  - action: session_stop
+
 specs:
-- id: spec_2013939_1
-  name: 【搜索】开启长文件名后高级搜索-创建时间_
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1998489_2
-  name: 【搜索专项优化-v1.1】文管搜索结果高亮显示关键词，召回内容最多显示200个字符
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1973563_3
-  name: 【搜索】【黑名单配置】在黑名单路径下修改文件内容再搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1972543_4
-  name: 【搜索】【黑名单配置】修改已配置的关键词
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1972333_5
-  name: 【搜索】【黑名单配置】在黑名单中的绝对路径下修改文件再搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1972325_6
-  name: 【搜索】【黑名单配置】在黑名单路径下新增文件再搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1972321_7
-  name: 【搜索】【黑名单配置】黑名单路径默认路径检查
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1970349_8
-  name: 【搜索】数据盘为xfs文件系统类型时进行搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1970347_9
-  name: 【搜索】数据盘为btrfs文件系统类型时进行搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1963325_10
-  name: 【搜索】主目录中搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1908461_11
-  name: 【搜索】重命名后立即添加内容，再搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1883939_12
-  name: 【搜索专项优化-v1.1】文管搜索结果高亮显示关键词
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1878463_13
-  name: 【搜索专项优化-v1.0】支持空格分词搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1878185_14
-  name: 【搜索专项优化-v1.0】完整镜像全文检索开关默认开启
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1843579_15
-  name: 【搜索】文管全文搜索-索引更新失败
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1816679_16
-  name: 搜索框-快捷键激活并搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: keyboard_hot_key
-    keys: Ctrl+S
-  - action: wait
-    wait: 0.5
-- id: spec_1810589_17
-  name: 【搜索】长文件名功能 - 搜索结果，文件右键打开文件所在位置
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810585_18
-  name: 【搜索】长文件名功能 - 搜索结果，文件右键新窗口打开
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810577_19
-  name: 【搜索】长文件名功能 - 搜索结果，文件右键剪切粘贴
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810573_20
-  name: 【搜索】长文件名功能  - 搜索结果，批量重命名，替换文本
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1810559_21
-  name: 【搜索】长文件名功能 - 搜索结果，文件右键快捷访问
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810557_22
-  name: 【搜索】长文件名功能 - 搜索结果，文件右键在终端中打开
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1810549_23
-  name: 【搜索】长文件名功能 - 全局搜索，搜索成功
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1807827_24
-  name: 计算机页面，检查搜索结果后的右键菜单功能
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1805785_25
-  name: '[129][core]回收站内搜索内容'
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1805541_26
-  name: 【搜索】搜索打开.sh文件后，打开文件所在位置不会导致文管闪退
-  tags:
-  - 功能测试
-  steps:
-  - action: mouse_right_click
-    x: 400
-    y: 300
-  - action: wait
-    wait: 0.5
-- id: spec_1805539_27
-  name: 【搜索】全文搜索后，拖动侧边栏滚动条/鼠标滚轮滚动查看结果
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1805537_28
-  name: 【搜索】文件重命名、新建后，进行搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1805535_29
-  name: 【搜索】【支持筛选搜索】文管单击"搜索"按钮后，输入关键字进行搜索
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
-- id: spec_1805533_30
-  name: 【搜索】【支持筛选搜索】文管单击“搜索”按钮后，筛选过滤条件，直接进行筛选
-  tags:
-  - 功能测试
-  steps:
-  - action: wait
-    wait: 0.5
+  # 快捷键激活搜索
+  - id: search_activate
+    name: 快捷键激活搜索框
+    tags: [search, smoke, shortcut]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.5
+
+  - id: search_input
+    name: 搜索输入测试
+    tags: [search, smoke]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: keyboard_type
+        text: test
+      - action: wait
+        wait: 0.5
+      - action: keyboard_press
+        keys: Escape
+      - action: wait
+        wait: 0.3
+
+  - id: search_clear
+    name: 搜索清空
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: keyboard_type
+        text: test
+      - action: wait
+        wait: 0.3
+      - action: keyboard_hot_key
+        keys: Ctrl+A
+      - action: wait
+        wait: 0.1
+      - action: keyboard_press
+        keys: BackSpace
+      - action: wait
+        wait: 0.3
+
+  # 搜索过滤选项
+  - id: search_filter_all_subfolders
+    name: 搜索过滤-所有子文件夹
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "list item", name: "所有子文件夹"}
+        do: click
+      - action: wait
+        wait: 0.3
+
+  - id: search_filter_current_folder
+    name: 搜索过滤-当前文件夹
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "list item", name: "当前文件夹"}
+        do: click
+      - action: wait
+        wait: 0.3
+
+  # 文件类型过滤
+  - id: search_filter_type_video
+    name: 搜索过滤-视频类型
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "list item", name: "视频"}
+        do: click
+      - action: wait
+        wait: 0.3
+
+  - id: search_filter_type_audio
+    name: 搜索过滤-音频类型
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "list item", name: "音频"}
+        do: click
+      - action: wait
+        wait: 0.3
+
+  - id: search_filter_type_image
+    name: 搜索过滤-图片类型
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "list item", name: "图片"}
+        do: click
+      - action: wait
+        wait: 0.3
+
+  - id: search_filter_type_document
+    name: 搜索过滤-文档类型
+    tags: [search]
+    steps:
+      - action: keyboard_hot_key
+        keys: Ctrl+F
+      - action: wait
+        wait: 0.3
+      - action: element_action
+        selector: {role: "list item", name: "文档"}
+        do: click
+      - action: wait
+        wait: 0.3
