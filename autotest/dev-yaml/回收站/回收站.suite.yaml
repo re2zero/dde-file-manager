@@ -1,6 +1,7 @@
 name: 回收站功能自测
 app: dde-file-manager
 module: 回收站
+status: draft
 description: 基于xlsx原始用例的回收站模块自动化测试套件
 tags:
 - 功能测试

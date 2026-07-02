@@ -1,6 +1,7 @@
 name: 菜单功能自测
 app: dde-file-manager
 module: 菜单
+status: draft
 description: 基于xlsx原始用例的菜单模块自动化测试套件
 tags:
 - 功能测试

@@ -1,6 +1,7 @@
 name: 文件管理功能自测
 app: dde-file-manager
 module: 文件管理
+status: draft
 description: 基于xlsx原始用例的文件管理模块自动化测试套件
 tags:
 - 功能测试

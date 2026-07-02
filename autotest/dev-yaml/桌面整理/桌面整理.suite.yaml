@@ -1,6 +1,7 @@
 name: 桌面整理功能自测
 app: dde-file-manager
 module: 桌面整理
+status: draft
 description: 基于xlsx原始用例的桌面整理模块自动化测试套件
 tags:
 - 功能测试
