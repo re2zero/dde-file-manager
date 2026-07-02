@@ -2,7 +2,7 @@ name: 桌面整理功能自测
 app: dde-file-manager
 module: 桌面整理
 status: draft
-description: 文管桌面整理功能自测套件
+description: 文管桌面整理功能自测套件，使用真实AT-SPI选择器
 tags:
   - 功能测试
   - desktop
@@ -20,9 +20,9 @@ specs:
     name: 开启桌面整理
     tags: [desktop]
     steps:
-      - action: mouse_right_click
-        x: 100
-        y: 100
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -35,9 +35,9 @@ specs:
     name: 关闭桌面整理
     tags: [desktop]
     steps:
-      - action: mouse_right_click
-        x: 100
-        y: 100
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -77,9 +77,9 @@ specs:
     tags: [desktop]
     skip: "需要开启桌面整理"
     steps:
-      - action: mouse_right_click
-        x: 100
-        y: 100
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action

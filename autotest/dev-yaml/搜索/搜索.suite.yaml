@@ -135,6 +135,10 @@ specs:
         do: click
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: search_filter_type_document
     name: 搜索过滤-文档类型

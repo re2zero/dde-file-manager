@@ -2,7 +2,7 @@ name: 文件管理功能自测
 app: dde-file-manager
 module: 文件管理
 status: ready
-description: 文管文件管理功能自测套件
+description: 文管文件管理功能自测套件，使用真实AT-SPI选择器
 tags:
   - 功能测试
   - smoke
@@ -11,6 +11,8 @@ tags:
 setup:
   - action: session_start
     command: dde-file-manager
+  - action: wait
+    wait: 1.0
 
 teardown:
   - action: session_stop
@@ -25,6 +27,10 @@ specs:
         keys: Ctrl+T
       - action: wait
         wait: 0.5
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: tab_close
     name: 标签页-关闭
@@ -34,6 +40,10 @@ specs:
         keys: Ctrl+W
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: tab_next
     name: 标签页-切换到下一个
@@ -43,6 +53,10 @@ specs:
         keys: Ctrl+Tab
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: tab_prev
     name: 标签页-切换到上一个
@@ -52,6 +66,10 @@ specs:
         keys: Ctrl+Shift+Tab
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   # 窗口管理
   - id: window_new
@@ -62,6 +80,10 @@ specs:
         keys: Ctrl+N
       - action: wait
         wait: 0.5
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 2
 
   - id: window_close
     name: 窗口-关闭
@@ -71,6 +93,10 @@ specs:
         keys: Ctrl+Q
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   # 导航
   - id: nav_back
@@ -81,6 +107,10 @@ specs:
         keys: Alt+Left
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: nav_forward
     name: 导航-前进
@@ -90,6 +120,10 @@ specs:
         keys: Alt+Right
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: nav_up
     name: 导航-上级目录
@@ -99,6 +133,10 @@ specs:
         keys: Alt+Up
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: nav_home
     name: 导航-主目录
@@ -108,6 +146,10 @@ specs:
         keys: Alt+Home
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   # 地址栏
   - id: address_bar_focus
@@ -122,6 +164,10 @@ specs:
         keys: Escape
       - action: wait
         wait: 0.2
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   # 刷新
   - id: refresh
@@ -132,6 +178,10 @@ specs:
         keys: Ctrl+R
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   # 显示隐藏文件
   - id: toggle_hidden
@@ -142,3 +192,7 @@ specs:
         keys: Ctrl+H
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1

@@ -2,7 +2,7 @@ name: 视图切换功能自测
 app: dde-file-manager
 module: 视图
 status: ready
-description: 文管视图切换功能自测套件
+description: 文管视图切换功能自测套件，使用真实AT-SPI选择器
 tags:
   - 功能测试
   - smoke
@@ -16,14 +16,13 @@ teardown:
   - action: session_stop
 
 specs:
-  # 视图模式切换
   - id: view_icon_mode
     name: 视图切换-图标视图
     tags: [ui, smoke]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -36,9 +35,9 @@ specs:
     name: 视图切换-列表视图
     tags: [ui, smoke]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -51,9 +50,9 @@ specs:
     name: 视图切换-树形视图
     tags: [ui]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -62,14 +61,13 @@ specs:
       - action: wait
         wait: 0.5
 
-  # 排序方式
   - id: sort_by_name
     name: 排序-按名称
     tags: [ui]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -82,9 +80,9 @@ specs:
     name: 排序-按修改时间
     tags: [ui]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -97,9 +95,9 @@ specs:
     name: 排序-按大小
     tags: [ui]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -112,9 +110,9 @@ specs:
     name: 排序-按类型
     tags: [ui]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action

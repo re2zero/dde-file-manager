@@ -174,6 +174,10 @@ specs:
         keys: Ctrl+N
       - action: wait
         wait: 0.5
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 2
 
   - id: shortcut_new_tab
     name: 快捷键-Ctrl+T新建标签页
@@ -183,6 +187,10 @@ specs:
         keys: Ctrl+T
       - action: wait
         wait: 0.5
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: shortcut_close_tab
     name: 快捷键-Ctrl+W关闭标签页
@@ -192,6 +200,10 @@ specs:
         keys: Ctrl+W
       - action: wait
         wait: 0.3
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1
 
   - id: shortcut_search
     name: 快捷键-Ctrl+F搜索
@@ -205,3 +217,7 @@ specs:
         keys: Escape
       - action: wait
         wait: 0.2
+    assert:
+      - type: window_amount
+        app: dde-file-manager
+        number: 1

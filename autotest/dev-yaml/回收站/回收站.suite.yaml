@@ -2,7 +2,7 @@ name: 回收站功能自测
 app: dde-file-manager
 module: 回收站
 status: ready
-description: 文管回收站功能自测套件
+description: 文管回收站功能自测套件，使用真实AT-SPI选择器
 tags:
   - 功能测试
   - smoke
@@ -16,11 +16,27 @@ teardown:
   - action: session_stop
 
 specs:
-  # 快捷键操作
+  # 导航到回收站
+  - id: trash_navigate
+    name: 导航到回收站
+    tags: [trash, smoke]
+    steps:
+      - action: element_action
+        selector: {role: "list item", name: "回收站"}
+        do: click
+      - action: wait
+        wait: 0.5
+
+  # 快捷键操作（需要先选中文件）
   - id: trash_shortcut_delete
     name: 快捷键-删除文件到回收站
     tags: [trash, shortcut]
     steps:
+      - action: element_action
+        selector: {role: "table cell", name: "testfile.txt"}
+        do: click
+      - action: wait
+        wait: 0.2
       - action: keyboard_press
         keys: Delete
       - action: wait
@@ -30,19 +46,33 @@ specs:
     name: 快捷键-Ctrl+Z撤销删除
     tags: [trash, shortcut]
     steps:
+      - action: element_action
+        selector: {role: "table cell", name: "testfile.txt"}
+        do: click
+      - action: wait
+        wait: 0.2
+      - action: keyboard_press
+        keys: Delete
+      - action: wait
+        wait: 0.3
       - action: keyboard_hot_key
         keys: Ctrl+Z
       - action: wait
         wait: 0.3
 
-  # 右键菜单操作
+  # 右键菜单操作（先导航到回收站，再右键点击文件项）
   - id: trash_context_menu
     name: 回收站右键菜单
     tags: [trash, menu]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "list item", name: "回收站"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: element_action
+        selector: {role: "table cell", name: "testfile.txt"}
+        do: right_click
       - action: wait
         wait: 0.3
 
@@ -50,9 +80,14 @@ specs:
     name: 右键菜单-还原
     tags: [trash, menu]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "list item", name: "回收站"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: element_action
+        selector: {role: "table cell", name: "testfile.txt"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -65,9 +100,14 @@ specs:
     name: 右键菜单-彻底删除
     tags: [trash, menu]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "list item", name: "回收站"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: element_action
+        selector: {role: "table cell", name: "testfile.txt"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
@@ -80,9 +120,14 @@ specs:
     name: 右键菜单-清空回收站
     tags: [trash, menu]
     steps:
-      - action: mouse_right_click
-        x: 400
-        y: 300
+      - action: element_action
+        selector: {role: "list item", name: "回收站"}
+        do: click
+      - action: wait
+        wait: 0.5
+      - action: element_action
+        selector: {role: "panel"}
+        do: right_click
       - action: wait
         wait: 0.3
       - action: element_action
